@@ -1,0 +1,15 @@
+nav{
+    display: none;
+}
+header button{
+    display: flex;
+}
+header{
+    justify-content: space-between;
+}
+#carritoButton{
+    position: relative;
+}
+#carrito{
+    width: 100%;
+}

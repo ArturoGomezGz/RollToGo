@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mister Rollo</title>
+    <link rel="stylesheet" href="Estilos/Main.css">
+    <link rel="stylesheet" href="Estilos/Mobil.css" media="screen and (max-width: 620px)">
+</head>
+<body>
+    <header>
+        <button id="boton-menu-movil"><img src="Imagenes/menu.png" alt=""></button>
+        <div id="logo"><img src="Imagenes/MisterRollo.jpeg" alt=""></div>
+        <nav>
+            <ul>
+                <li id="salados-nav-button"><p>salados</p></li>
+                <li id="dulces-nav-button"><p>dulces</p></li>
+                <li id="galletas-nav-button"><p>galletas</p></li>
+            </ul>
+        </nav>
+
+        <div id="carritoButton">
+            <img src="Imagenes/carrito.png" alt="">
+            <p id="cantidad-productos-en-carrito">0</p>
+        </div>
+
+    </header>
+
+    <main>
+        <div id="sections-container">
+            <h2 id="salados-section">rollos (salados)</h2>
+            <div id="salados" class="cards-container">
+
+            </div>
+       
+            <h2 id="dulces-section">rolles (dulces)</h2>
+            <div id="dulces" class="cards-container">
+
+            </div>
+                        
+            <h2 id="galletas-section">galletas</h2>
+            <div id="galletas" class="cards-container">
+
+            </div>
+        </div>
+    </main>
+
+    <aside id="menu-movil" class="inactiveMovilMenu">
+        <div id="contenido-menu-movil">
+            <ul>
+                <li id="salados-nav-button-mov"><p>salados</p></li>
+                <li id="dulces-nav-button-mov"><p>dulces</p></li>
+                <li id="galletas-nav-button-mov"><p>galletas</p></li>
+            </ul>
+        </div>
+    </aside>
+
+</body>
+<script src="Script.js"></script>
+</html>

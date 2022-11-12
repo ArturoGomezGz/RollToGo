@@ -1,0 +1,55 @@
+:root{
+    --color1: rgb(79, 71, 71);
+    --color2: white;
+    --color3: rgba(205, 199, 199, 0.963);
+    --color4: rgb(239, 86, 86);
+    --color5: black;
+    --fuente1: sans-serif;
+    --headerSpace: 100px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente1);
+    font-size: 17px;
+}
+body{
+    background-color: var(--color1);
+}
+#log-in-card{
+    background-color: var(--color4);
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 30px;
+    border: solid 3px var(--color3);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form label{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#logo-container img{
+    width: 100%;
+    border-radius: 50%;
+}
+#logo-container{
+    width: 200px;
+    margin: auto;
+    padding-top: 15px ;
+}
+#submit{
+    border: solid 1px var(--color5);
+    margin-top: 10px;
+    color: var(--color4);
+    background-color: var(--color2);
+    padding: 3px;
+}

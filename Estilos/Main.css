@@ -1,0 +1,162 @@
+:root{
+    --color1: rgb(210, 210, 210);
+    --color2: white;
+    --color3: rgba(205, 199, 199, 0.963);
+    --color4: rgb(239, 86, 86);
+    --color5: black;
+    --fuente1: sans-serif;
+    --headerSpace: 100px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente1);
+}
+.carritoInactive{
+    transform: translateX(620px);
+    transition: 1s;
+}
+.inactiveMovilMenu{
+    transform: translateX(-200px);
+    transition: 1s;
+}
+/* Encabezado barra de navegación */
+header{
+    background-color: var(--color2);
+    width: 100%;
+    height: var(--headerSpace);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 2px solid var(--color5);
+}
+header button img{
+    width: 100%;
+}
+header button{
+    width: 40px;
+    margin: 24px;
+    background-color: var(--color2);
+    border: none;
+    display: none;
+}
+#logo{
+    margin: 20px;
+    width: 100px;
+}
+#logo img{
+    width: 100%;
+}
+nav ul{
+    display: flex;
+}
+nav ul li{
+    width: auto;
+    list-style: none;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color1);
+    cursor: pointer;
+}
+nav ul li:hover{
+    color: var(--color4);
+}
+nav ul li ::first-letter{
+    text-transform: capitalize;
+}
+#lo-mas-vendido-nav{
+    text-transform: uppercase;
+}
+#carritoButton{
+    width: 55px;
+    height: 55px;
+    margin: 24px;
+    position: relative;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+#carritoButton img{
+    width: 100%;
+}
+#carritoButton p{
+    font-size: 20px;
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background-color: var(--color4);
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1.3px solid var(--color5);
+}
+/* menu de movil */
+#menu-movil{
+    width: 200px;
+    height: 100%;
+    background-color: var(--color3);
+    position: fixed;
+    top: var(--headerSpace);
+    left: 0;
+    transition: 1s;
+}
+#contenido-menu-movil{
+    margin: 30px auto ;
+    width: 80%;
+}
+#contenido-menu-movil ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+}
+#contenido-menu-movil ul li{
+    text-transform: capitalize;
+    font-size: 22px;
+    margin-top: 20px;
+    border-bottom: 1px solid var(--color4);
+    color: var(--color4);
+    text-align: right;
+}
+/* productos */
+main{
+    margin-top: calc( var(--headerSpace) + 10px);
+}
+.cards-container{
+    display: grid;
+    margin: auto;
+    width: 90%;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 30px;
+    place-content: center;
+}
+.card{
+    width: 250px;
+    background-color: var(--color4);
+    border-radius: 20px;
+}
+.card img{
+    width: 100%;
+    border-radius: 20px;
+}
+.product-info{
+    width: 80%;
+    margin: 15px auto;
+}
+.product-info h3{
+    text-align: center;
+    color: var(--color2);
+}
+#sections-container>h2{
+    text-align: center;
+    margin: 20px 0;
+    background-color: var(--color1);
+    padding: 10px;
+    color: var(--color4);
+    text-transform: capitalize;
+}
