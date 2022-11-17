@@ -13,3 +13,21 @@ header{
 #carrito{
     width: 100%;
 }
+#cerrar>img{
+    width: 35px;
+}
+#cerrar{
+    padding: 10px;
+}
+.imagen-producto-en-detalle{
+    width: 200px;
+}
+#detalles-de-producto-main label span, #detalles-de-producto-main label input {
+    font-size: 18px;
+}
+.selector-de-cantidad{
+    width: 140px;
+}
+.selector-de-cantidad input{
+    margin-top: 5px;
+}
