@@ -31,3 +31,14 @@ header{
 .selector-de-cantidad input{
     margin-top: 5px;
 }
+#lista-informacion{
+    flex-direction: column;
+    overflow: scroll;
+}
+#lista-informacion form{
+    width: 350px;
+    margin-top: 20px;
+}
+#lista-de-productos-checkout{
+    width: 100%;
+}

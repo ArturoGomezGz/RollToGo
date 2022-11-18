@@ -23,6 +23,8 @@ const cantidadDeProductsEnCarrito = document.getElementById("cantidad-productos-
 const crearPedido = document.getElementById("hacer-pedido");
 const crearPedidoMov = document.getElementById("hacer-pedido-mov");
 
+const listaDeProductosCheckout = document.getElementById("lista-de-productos-checkout");
+
 botonSaladosSectionNav.addEventListener("click", () => scrollToSection(seccionSalados));
 botonDulcesSectionNav.addEventListener("click", () => scrollToSection(seccionDulces));
 botonGalletasSectionNav.addEventListener("click", () => scrollToSection(seccionGalletas));
@@ -336,18 +338,31 @@ function eliminarDeCarrito(product){
     cantidadDeProductsEnCarrito.innerText = productInCart.length;
 }
 
-
 crearPedido.addEventListener("click", hacerPedido)
 crearPedidoMov.addEventListener("click", hacerPedido)
 
 function hacerPedido() {
-    if (productInCart.length == 0) {
-        alert("Primero añade productos al carrito")
-    } else {
+    if (productInCart.length > 0){
+        const pedido = document.getElementById("pedido");
+        pedido.classList.remove("inactive")
         for (product of productInCart){
-            console.log(product.name);
-            console.log(product.cantidad);
-            console.log(product.imagen);
+            const productoCheckout = document.createElement("div");
+            productoCheckout.classList.add("producto-checkut");
+
+            const nombre = document.createElement("h3");
+            nombre.innerText = product.name;
+            const cantidad = document.createElement("h4");
+            cantidad.innerText = "cantidad: " + product.cantidad;
+            const precio = document.createElement("h4");
+            precio.innerText = "precio: " + product.price;
+
+            productoCheckout.appendChild(nombre);
+            productoCheckout.appendChild(cantidad);
+            productoCheckout.appendChild(precio);
+
+            listaDeProductosCheckout.appendChild(productoCheckout);
         }
+    } else {
+        alert("Primer tienes que agregar productos a tu carrito")
     }
 }
