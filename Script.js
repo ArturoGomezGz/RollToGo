@@ -18,6 +18,11 @@ const botonGalletasSectionMovil = document.getElementById("galletas-nav-button-m
 
 const informacioDelProducto = document.getElementById("informacio-del-producto");
 
+const cantidadDeProductsEnCarrito = document.getElementById("cantidad-productos-en-carrito");
+
+const crearPedido = document.getElementById("hacer-pedido");
+const crearPedidoMov = document.getElementById("hacer-pedido-mov");
+
 botonSaladosSectionNav.addEventListener("click", () => scrollToSection(seccionSalados));
 botonDulcesSectionNav.addEventListener("click", () => scrollToSection(seccionDulces));
 botonGalletasSectionNav.addEventListener("click", () => scrollToSection(seccionGalletas));
@@ -30,8 +35,14 @@ const botonCarrito = document.getElementById("carritoButton");
 
 botonCarrito.addEventListener("click", togglecarrito);
 
+cantidadDeProductsEnCarrito.innerText = 0 ;
+
 function togglecarrito(){
-    carrito.classList.toggle("carrito-inactive")
+    if (productInCart.length == 0) {
+        alert("El carrito esta vacío")
+    } else {
+        carrito.classList.toggle("carrito-inactive");
+    }
 }
 
 function scrollToSection(seccion){
@@ -49,6 +60,7 @@ let rolloPP = {
     name: "Rollo De Peperoni",
     price: 20,
     imagen: "Imagenes/RollDeCanela.jpeg",
+    cantidad: 0,
     type: "salado"
 }
 let rolloPH = {
@@ -56,6 +68,7 @@ let rolloPH = {
     name: "Rollo De Philadelphia",
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
+    cantidad: 0,
     type: "salado"
 }
 let rolloIT = {
@@ -63,6 +76,7 @@ let rolloIT = {
     name: "Rollo Italiano",
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
+    cantidad: 0,
     type: "salado"
 }
 let rolloCHAM = {
@@ -70,6 +84,7 @@ let rolloCHAM = {
     name: "Rollo De Champiñones",
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
+    cantidad: 0,
     type: "salado"
 }
 let rolloCHO = {
@@ -77,6 +92,7 @@ let rolloCHO = {
     name: "Rollo De Chorizo",
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
+    cantidad: 0,
     type: "salado"
 }
 let rollCHO = {
@@ -84,6 +100,7 @@ let rollCHO = {
     name: "Roll De Chocolate",
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
+    cantidad: 0,
     type: "dulce"
 }
 let rollCA = {
@@ -91,6 +108,7 @@ let rollCA = {
     name: "Roll De Canela Con Manzana",
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
+    cantidad: 0,
     type: "dulce"
 }
 let galletaCH = {
@@ -98,6 +116,7 @@ let galletaCH = {
     name: "Galleta De Chocolate",
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
+    cantidad: 0,
     type: "galleta"
 }
 let galletaAV = {
@@ -105,6 +124,7 @@ let galletaAV = {
     name: "Galleta De Avena",
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
+    cantidad: 0,
     type: "galleta"
 }
 
@@ -200,12 +220,9 @@ function abirirDetallesDeProducto(producto){
 }
 
 function cerrarDetallesDeProducto(){
-    const remover1 = document.querySelector(".imagen-nombre-descripcion")
-    const remover2 = document.querySelector(".selector-de-cantidad")
+    informacioDelProducto.innerHTML = null
     detallesdeProducto.classList.add("inactive");
     productDetails.pop();
-    remover1.remove()
-    remover2.remove()
     
 }
 
@@ -233,10 +250,12 @@ function renderDetallesDeProducto(product){
     span.innerText = "cantidad a pedir:";
     const input = document.createElement("input");
     input.setAttribute("type", "number");
+    input.setAttribute("id", "cantidad-" + product.id)
     const añadirAlCarrito = document.createElement("div");
     añadirAlCarrito.classList.add("anadir-al-carrito");
     const carrito = document.createElement("img");
     carrito.setAttribute("src", "Imagenes/agregarAlcarrito.png")
+    carrito.setAttribute("onclick", "agregarAlCarrito(" + product.id + ")" )
 
     selectorDeCantidad.appendChild(label);
     selectorDeCantidad.appendChild(añadirAlCarrito);
@@ -253,4 +272,82 @@ function renderDetallesDeProducto(product){
 
     informacioDelProducto.appendChild(ImagenNombreDescripcion);
     informacioDelProducto.appendChild(selectorDeCantidad);
+}
+
+function agregarAlCarrito(product){
+    const selectorDeCantidad = document.getElementById("cantidad-" + product.id );
+    if (selectorDeCantidad.value < 1) {
+        alert("Selecciona una cantidad")
+    } else {
+        if (productInCart.includes(product)){
+            alert("Ya tienes este producto en el carrito, si quieres agregar mas, elimina el producto del carrito y vuelve a intentarlo");
+        } else {
+            productInCart.push(product);
+            product.cantidad = selectorDeCantidad.value;
+            renderCarrito();
+            cerrarDetallesDeProducto();
+            alert("Producto agregado con éxito");
+            cantidadDeProductsEnCarrito.innerText = productInCart.length;
+        }
+    }
+}
+
+function renderCarrito(){
+    carrito.innerHTML = null
+    for (product of productInCart){
+        const productoEnCarrito = document.createElement("div");
+        productoEnCarrito.classList.add("producto-en-carrito");
+
+        const imagenDeProductEnCariito = document.createElement("div");
+        imagenDeProductEnCariito.classList.add("imagen-de-producto-en-carrito");
+        const imagen = document.createElement("img");
+        imagen.setAttribute("src", product.imagen);
+        imagenDeProductEnCariito.appendChild(imagen);
+
+        const informacionEnCarrito = document.createElement("div");
+        informacionEnCarrito.classList.add("informacio-en-carrito");
+        const nombreDeProducto = document.createElement("h3");
+        nombreDeProducto.innerText = product.name;
+        const cantidadDeProducto = document.createElement("h4");
+        cantidadDeProducto.innerText = "Cantidad";
+        const cantidadDeProductoNumero = document.createElement("p");
+        cantidadDeProductoNumero.innerText = product.cantidad;
+        informacionEnCarrito.appendChild(nombreDeProducto);
+        informacionEnCarrito.appendChild(cantidadDeProducto);
+        informacionEnCarrito.appendChild(cantidadDeProductoNumero);
+
+        const botonEliminarDeCarrito = document.createElement("h3");
+        botonEliminarDeCarrito.innerText = "x"
+        botonEliminarDeCarrito.classList.add("boton-quitar-de-carrito");
+        botonEliminarDeCarrito.setAttribute("onclick", "eliminarDeCarrito(" + product.id + ")")
+
+        productoEnCarrito.appendChild(imagenDeProductEnCariito);
+        productoEnCarrito.appendChild(informacionEnCarrito);
+        productoEnCarrito.appendChild(botonEliminarDeCarrito);
+
+        carrito.appendChild(productoEnCarrito);
+    }
+}
+
+function eliminarDeCarrito(product){
+    togglecarrito();
+    productInCart.pop(product);
+    renderCarrito();
+    cantidadDeProductsEnCarrito.innerText = productInCart.length;
+}
+
+
+crearPedido.addEventListener("click", hacerPedido)
+crearPedidoMov.addEventListener("click", hacerPedido)
+
+function hacerPedido() {
+    if (productInCart.length == 0) {
+        alert("Primero añade productos al carrito")
+    } else {
+        for (product of productInCart){
+            console.log(product.name);
+            console.log(product.cantidad);
+            console.log(product.imagen);
+        }
+    }
 }
