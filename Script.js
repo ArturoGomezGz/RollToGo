@@ -333,7 +333,8 @@ function renderCarrito(){
 
 function eliminarDeCarrito(product){
     togglecarrito();
-    productInCart.pop(product);
+    const eliminar = productInCart.indexOf(product)
+    productInCart.splice(eliminar, 1);
     renderCarrito();
     cantidadDeProductsEnCarrito.innerText = productInCart.length;
 }
