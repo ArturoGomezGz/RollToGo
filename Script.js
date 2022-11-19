@@ -70,7 +70,7 @@ let rolloPH = {
     id: "rolloPH",
     name: "Rollo De Philadelphia",
     price: 20,
-    imagen: "Imagenes/MisterRollo.jpeg",
+    imagen: "Imagenes/MisterRollo.jpg",
     cantidad: 0,
     type: "salado",
     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
@@ -79,7 +79,7 @@ let rolloIT = {
     id: "rolloIT",
     name: "Rollo Italiano",
     price: 20,
-    imagen: "Imagenes/MisterRollo.jpeg",
+    imagen: "Imagenes/MisterRollo.jpg",
     cantidad: 0,
     type: "salado",
     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
@@ -88,7 +88,7 @@ let rolloCHAM = {
     id: "rolloCHAM",
     name: "Rollo De Champiñones",
     price: 20,
-    imagen: "Imagenes/MisterRollo.jpeg",
+    imagen: "Imagenes/MisterRollo.jpg",
     cantidad: 0,
     type: "salado",
     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
@@ -97,7 +97,7 @@ let rolloCHO = {
     id: "rolloCHO",
     name: "Rollo De Chorizo",
     price: 20,
-    imagen: "Imagenes/MisterRollo.jpeg",
+    imagen: "Imagenes/MisterRollo.jpg",
     cantidad: 0,
     type: "salado",
     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
@@ -106,7 +106,7 @@ let rollCHO = {
     id: "rollCHO",
     name: "Roll De Chocolate",
     price: 20,
-    imagen: "Imagenes/MisterRollo.jpeg",
+    imagen: "Imagenes/MisterRollo.jpg",
     cantidad: 0,
     type: "dulce",
     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
@@ -115,7 +115,7 @@ let rollCA = {
     id: "rollCA",
     name: "Roll De Canela Con Manzana",
     price: 20,
-    imagen: "Imagenes/MisterRollo.jpeg",
+    imagen: "Imagenes/MisterRollo.jpg",
     cantidad: 0,
     type: "dulce",
     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
@@ -124,7 +124,7 @@ let galletaCH = {
     id: "galletaCH",
     name: "Galleta De Chocolate",
     price: 20,
-    imagen: "Imagenes/MisterRollo.jpeg",
+    imagen: "Imagenes/MisterRollo.jpg",
     cantidad: 0,
     type: "galleta",
     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
@@ -133,7 +133,7 @@ let galletaAV = {
     id: "galletaAV",
     name: "Galleta De Avena",
     price: 20,
-    imagen: "Imagenes/MisterRollo.jpeg",
+    imagen: "Imagenes/MisterRollo.jpg",
     cantidad: 0,
     type: "galleta",
     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
