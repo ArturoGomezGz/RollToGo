@@ -1,6 +1,6 @@
 :root{
     --color1: rgb(79, 71, 71);
-    --color2: white;
+    --color2: rgb(255, 255, 255);
     --color3: rgba(205, 199, 199, 0.963);
     --color4: rgb(239, 86, 86);
     --color5: black;
@@ -52,4 +52,9 @@ form label{
     color: var(--color4);
     background-color: var(--color2);
     padding: 3px;
+}
+#guest-button{
+    width: 60px;
+    margin-left: auto;
+    margin-right: 73px;
 }

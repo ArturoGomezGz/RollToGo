@@ -63,7 +63,8 @@ let rolloPP = {
     price: 20,
     imagen: "Imagenes/RollDeCanela.jpeg",
     cantidad: 0,
-    type: "salado"
+    type: "salado",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
 }
 let rolloPH = {
     id: "rolloPH",
@@ -71,7 +72,8 @@ let rolloPH = {
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
     cantidad: 0,
-    type: "salado"
+    type: "salado",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
 }
 let rolloIT = {
     id: "rolloIT",
@@ -79,7 +81,8 @@ let rolloIT = {
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
     cantidad: 0,
-    type: "salado"
+    type: "salado",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
 }
 let rolloCHAM = {
     id: "rolloCHAM",
@@ -87,7 +90,8 @@ let rolloCHAM = {
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
     cantidad: 0,
-    type: "salado"
+    type: "salado",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
 }
 let rolloCHO = {
     id: "rolloCHO",
@@ -95,7 +99,8 @@ let rolloCHO = {
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
     cantidad: 0,
-    type: "salado"
+    type: "salado",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
 }
 let rollCHO = {
     id: "rollCHO",
@@ -103,7 +108,8 @@ let rollCHO = {
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
     cantidad: 0,
-    type: "dulce"
+    type: "dulce",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
 }
 let rollCA = {
     id: "rollCA",
@@ -111,7 +117,8 @@ let rollCA = {
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
     cantidad: 0,
-    type: "dulce"
+    type: "dulce",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
 }
 let galletaCH = {
     id: "galletaCH",
@@ -119,7 +126,8 @@ let galletaCH = {
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
     cantidad: 0,
-    type: "galleta"
+    type: "galleta",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
 }
 let galletaAV = {
     id: "galletaAV",
@@ -127,7 +135,8 @@ let galletaAV = {
     price: 20,
     imagen: "Imagenes/MisterRollo.jpeg",
     cantidad: 0,
-    type: "galleta"
+    type: "galleta",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
 }
 
 function createProducts(){
@@ -240,7 +249,7 @@ function renderDetallesDeProducto(product){
     const nombreProducto = document.createElement("h3");
     nombreProducto.innerText = product.name;
     const descripcionDeProducto = document.createElement("p");
-    descripcionDeProducto.innerText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna";
+    descripcionDeProducto.innerText = product.descripcion;
     
     
     const selectorDeCantidad = document.createElement("form");

@@ -26,7 +26,7 @@ header{
     font-size: 18px;
 }
 .selector-de-cantidad{
-    width: 140px;
+    width: 200px;
 }
 .selector-de-cantidad input{
     margin-top: 5px;
@@ -41,4 +41,13 @@ header{
 }
 #lista-de-productos-checkout{
     width: 100%;
+}
+.imagen-nombre-descripcion{
+    margin: auto;
+}
+#informacio-del-producto{
+    flex-direction: column;
+}
+.selector-de-cantidad{
+    margin-top: 30px;
 }
