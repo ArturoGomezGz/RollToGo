@@ -4,6 +4,14 @@ let = productList = []
 let dulce = "dul";
 let salado = "sal";
 let galleta = "gall"
+// Precios
+let precioRolloGrande = 25;
+let precioRolloMediano = 15;
+let precioRolloChico = null;
+let precioRollGrande = 22;
+let precioRollMediano = null;
+let precioGalletaGrande = 18;
+let precioGalletaChica = null
 
 function Producto(idProducto, name, type, price, image, cantidad, description) {
     this.id = idProducto;
@@ -17,96 +25,14 @@ function Producto(idProducto, name, type, price, image, cantidad, description) {
     productList.push(this)
 }
 
-let rollPPg = new Producto("RollPPg", "Roll de peperoni grande", dulce, 22, "Productos/rolloPP.jpg", null ,"delicioso rollo de pizza de peperoni");
-let rollPHg = new Producto("RollPHg", "Rollo de jamon con philadelphia grande", salado, 22, "Productos/rolloPH.jpg", null, "delicioso rollo de jamon con philadelphia");
+let rollPPg = new Producto("rollPPg", "Roll de peperoni grande", salado, precioRolloGrande, "Productos/rolloPP.jpg", null ,"delicioso rollo de pizza de peperoni");
+let rollPHg = new Producto("rollPHg", "Rollo de jamon con philadelphia grande", salado, precioRolloGrande, "Productos/rolloPH.jpg", null, "delicioso rollo de jamon con philadelphia");
+let rolloITg = new Producto("rolloITg", "Rollo Italiano grnade", salado, precioRolloGrande, "Productos/rolloIT.jpg", null, "Undelicioso rollo de pizza italiano");
+let rolloHAg = new Producto("rolloHAg", "Rollo hawaiano grande", salado, precioRolloGrande, "Productos/rolloHA.jpg", null, "Rollo de pizza hawaiano con piña, queso y salsa de tomate");
+let rolloCHAMg = new Producto("rolloCHAMg", "Rollo de champiñones grande", salado, precioRolloGrande, "Productos/rolloCHAM.jpg", null, "Un delicioso rollo de champiñones");
+let rolloCHOg = new Producto("rolloCHOg", "Rollo de chorizo grande", salado, precioRolloGrande, "Productos/rolloCHO.jpg", null, "Un delicioso rollo para los amanetdes del chorizo con topping de queso");
+let rollCHOg = new Producto("rollCHOg", "Roll de chocolate grande", dulce, precioRollGrande,"Productos/rollCHO.jpg", null, "Dulce roll de chocolate");
+let rollCAg = new Producto("rollCAg", "Roll de canela con manzana grande", dulce, precioRollGrande, "Productos/rollCA.jpg", null, "Dulce roll de canela con manzana");
+let galletaCHg = new Producto("galletaCHg", "Galleta de chocolate grande", galleta, precioGalletaGrande, "Productos/galletaCH.jpg", null, "Galleta con chispas de chocolate");
+let galletaAVg = new Producto("galletaAVg", "Galleta de avena grande", galleta, precioGalletaGrande, "Productos/galletaAV.jpg", null, "Deliciosa galleta de avena");
 
-
-
-let productInCart = [];
-let productDetails = [];
-
-let rolloIT = {
-    id: "rolloIT",
-    name: "Rollo Italiano",
-    price: 20,
-    imagen: "Productos/rolloIT.jpg",
-    cantidad: 0,
-    type: "salado",
-    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
-}
-let rolloHA = {
-    id: "rolloHA",
-    name: "Rollo Hawaiano",
-    price: 20,
-    imagen: "Productos/rolloHA.jpg",
-    cantidad: 0,
-    type: "salado",
-    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
-}
-let rolloCHAM = {
-    id: "rolloCHAM",
-    name: "Rollo De Champiñones",
-    price: 20,
-    imagen: "Productos/rolloCHAM.jpg",
-    cantidad: 0,
-    type: "salado",
-    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
-}
-let rolloCHO = {
-    id: "rolloCHO",
-    name: "Rollo De Chorizo",
-    price: 20,
-    imagen: "Productos/rolloCHO.jpg",
-    cantidad: 0,
-    type: "salado",
-    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
-}
-let rollCHO = {
-    id: "rollCHO",
-    name: "Roll De Chocolate",
-    price: 20,
-    imagen: "Productos/rollCHO.jpg",
-    cantidad: 0,
-    type: "dulce",
-    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
-}
-let rollCA = {
-    id: "rollCA",
-    name: "Roll De Canela Con Manzana",
-    price: 20,
-    imagen: "Productos/rollCA.jpg",
-    cantidad: 0,
-    type: "dulce",
-    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
-}
-let galletaCH = {
-    id: "galletaCH",
-    name: "Galleta De Chocolate",
-    price: 20,
-    imagen: "Productos/galletaCH.jpg",
-    cantidad: 0,
-    type: "galleta",
-    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
-}
-let galletaAV = {
-    id: "galletaAV",
-    name: "Galleta De Avena",
-    price: 20,
-    imagen: "Productos/galletaAV.jpg",
-    cantidad: 0,
-    type: "galleta",
-    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
-}
-
-function createProducts(){
-    productList.push(rolloPP);
-    productList.push(rolloPH);
-    productList.push(rolloIT);
-    productList.push(rolloHA);
-    productList.push(rolloCHAM);
-    productList.push(rolloCHO);
-    productList.push(rollCHO);
-    productList.push(rollCA);
-    productList.push(galletaCH);
-    productList.push(galletaAV);
-}

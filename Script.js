@@ -52,5 +52,3 @@ function scrollToSection(seccion){
         behavior: "smooth"
     })
 }
-
-
