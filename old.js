@@ -1,83 +1,176 @@
-let = productList = [];
+/* const BotonMenuMovil = document.getElementById("boton-menu-movil");
+const MenuMovil = document.getElementById("menu-movil");
+
+const seccionProductosSalados = document.getElementById("salados");
+const seccionProductosDulces = document.getElementById("dulces");
+const seccionProductosGalletas = document.getElementById("galletas");
+
+const seccionSalados = document.getElementById("salados-section");
+const seccionDulces = document.getElementById("dulces-section");
+const seccionGalletas = document.getElementById("galletas-section");
+
+const botonSaladosSectionNav = document.getElementById("salados-nav-button");
+const botonDulcesSectionNav = document.getElementById("dulces-nav-button");
+const botonGalletasSectionNav = document.getElementById("galletas-nav-button");
+const botonSaladosSectionMovil = document.getElementById("salados-nav-button-mov");
+const botonDulcesSectionMovil = document.getElementById("dulces-nav-button-mov");
+const botonGalletasSectionMovil = document.getElementById("galletas-nav-button-mov");
+
+const informacioDelProducto = document.getElementById("informacio-del-producto");
+
+const cantidadDeProductsEnCarrito = document.getElementById("cantidad-productos-en-carrito");
+
+const crearPedido = document.getElementById("hacer-pedido");
+const crearPedidoMov = document.getElementById("hacer-pedido-mov");
+
+const listaDeProductosCheckout = document.getElementById("lista-de-productos-checkout");
+
+botonSaladosSectionNav.addEventListener("click", () => scrollToSection(seccionSalados));
+botonDulcesSectionNav.addEventListener("click", () => scrollToSection(seccionDulces));
+botonGalletasSectionNav.addEventListener("click", () => scrollToSection(seccionGalletas));
+botonSaladosSectionMovil.addEventListener("click", () => scrollToSection(seccionSalados));
+botonDulcesSectionMovil.addEventListener("click", () => scrollToSection(seccionDulces));
+botonGalletasSectionMovil.addEventListener("click", () => scrollToSection(seccionGalletas));
+
+const carrito = document.getElementById("carrito");
+const botonCarrito = document.getElementById("carritoButton");
+
+botonCarrito.addEventListener("click", togglecarrito);
+
+cantidadDeProductsEnCarrito.innerText = 0 ;
+
+function togglecarrito(){
+    if (productInCart.length == 0) {
+        alert("El carrito esta vacío")
+    } else {
+        carrito.classList.toggle("carrito-inactive");
+    }
+}
+
+function scrollToSection(seccion){
+    seccion.scrollIntoView({
+        behavior: "smooth"
+    })
+}
+
+let productList = [];
 let productInCart = [];
 let productDetails = [];
 
-// Tipos
-const dulce = "dulce";
-const salado = "salado";
-const galleta = "galleta";
-// Tamaños
-const chico = "chico";
-const mediano = "mediano";
-const grande = "grande";
-// Precios
-let precioRolloGrande = 25;
-let precioRolloMediano = 15;
-let precioRolloChico = null;
-let precioRollGrande = 22;
-let precioRollMediano = null;
-let precioGalletaGrande = 18;
-let precioGalletaMediana = null;
-
-// Productos
-function Producto(idProducto, name, type, price, image, cantidad, description, tamaño) {
-    this.id = idProducto;
-    this.name = name;
-    this.type = type;
-    this.price = type;
-    this.price = price;
-    this.image = image;
-    this.cantidad = cantidad;
-    this.description = description;
-    this.tamaño = tamaño;
-    productList.push(this)
+let rolloPP = {
+    id: "rolloPP",
+    name: "Rollo De Peperoni",
+    price: 20,
+    imagen: "Productos/rolloPP.jpg",
+    cantidad: 0,
+    type: "salado",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
+}
+let rolloPH = {
+    id: "rolloPH",
+    name: "Rollo De Philadelphia",
+    price: 20,
+    imagen: "Productos/rolloPH.jpg",
+    cantidad: 0,
+    type: "salado",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
+}
+let rolloIT = {
+    id: "rolloIT",
+    name: "Rollo Italiano",
+    price: 20,
+    imagen: "Productos/rolloIT.jpg",
+    cantidad: 0,
+    type: "salado",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
+}
+let rolloHA = {
+    id: "rolloHA",
+    name: "Rollo Hawaiano",
+    price: 20,
+    imagen: "Productos/rolloHA.jpg",
+    cantidad: 0,
+    type: "salado",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
+}
+let rolloCHAM = {
+    id: "rolloCHAM",
+    name: "Rollo De Champiñones",
+    price: 20,
+    imagen: "Productos/rolloCHAM.jpg",
+    cantidad: 0,
+    type: "salado",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
+}
+let rolloCHO = {
+    id: "rolloCHO",
+    name: "Rollo De Chorizo",
+    price: 20,
+    imagen: "Productos/rolloCHO.jpg",
+    cantidad: 0,
+    type: "salado",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
+}
+let rollCHO = {
+    id: "rollCHO",
+    name: "Roll De Chocolate",
+    price: 20,
+    imagen: "Productos/rollCHO.jpg",
+    cantidad: 0,
+    type: "dulce",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
+}
+let rollCA = {
+    id: "rollCA",
+    name: "Roll De Canela Con Manzana",
+    price: 20,
+    imagen: "Productos/rollCA.jpg",
+    cantidad: 0,
+    type: "dulce",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
+}
+let galletaCH = {
+    id: "galletaCH",
+    name: "Galleta De Chocolate",
+    price: 20,
+    imagen: "Productos/galletaCH.jpg",
+    cantidad: 0,
+    type: "galleta",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
+}
+let galletaAV = {
+    id: "galletaAV",
+    name: "Galleta De Avena",
+    price: 20,
+    imagen: "Productos/galletaAV.jpg",
+    cantidad: 0,
+    type: "galleta",
+    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi atque sit tempore magna"
 }
 
-let rollPPg = new Producto("rollPPg", "Rollo de peperoni grande", salado, precioRolloGrande, "Productos/rolloPP.jpg", null,"delicioso rollo de pizza de peperoni", grande);
-let rollPPm = new Producto("rollPPm", "Rollo de peperoni mediano", salado, precioRolloMediano, "Productos/rolloPP.jpg", null,"delicioso rollo de pizza de peperoni", mediano);
-let rollPPc = new Producto("rollPPc", "Rollo de peperoni chico", salado, precioRolloChico, "Productos/rolloPP.jpg", null,"delicioso rollo de pizza de peperoni", chico);
-
-let rollPHg = new Producto("rollPHg", "Rollo de jamon con philadelphia grande", salado, precioRolloGrande, "Productos/rolloPH.jpg", null, "delicioso rollo de jamon con philadelphia", grande);
-let rollPHm = new Producto("rollPHm", "Rollo de jamon con philadelphia mediano", salado, precioRolloMediano, "Productos/rolloPH.jpg", null, "delicioso rollo de jamon con philadelphia", mediano);
-let rollPHc = new Producto("rollPHc", "Rollo de jamon con philadelphia chico", salado, precioRolloChico, "Productos/rolloPH.jpg", null, "delicioso rollo de jamon con philadelphia", chico);
-
-let rolloITg = new Producto("rolloITg", "Rollo Italiano grnade", salado, precioRolloGrande, "Productos/rolloIT.jpg", null, "Undelicioso rollo de pizza italiano", grande);
-let rolloITm = new Producto("rolloITm", "Rollo Italiano mediano", salado, precioRolloMediano, "Productos/rolloIT.jpg", null, "Undelicioso rollo de pizza italiano", mediano);
-let rolloITc = new Producto("rolloITc", "Rollo Italiano chico", salado, precioRolloChico, "Productos/rolloIT.jpg", null, "Undelicioso rollo de pizza italiano", chico);
-
-let rolloHAg = new Producto("rolloHAg", "Rollo hawaiano grande", salado, precioRolloGrande, "Productos/rolloHA.jpg", null, "Rollo de pizza hawaiano con piña, queso y salsa de tomate", grande);
-let rolloHAm = new Producto("rolloHAm", "Rollo hawaiano mediano", salado, precioRolloMediano, "Productos/rolloHA.jpg", null, "Rollo de pizza hawaiano con piña, queso y salsa de tomate", mediano);
-let rolloHAc = new Producto("rolloHAc", "Rollo hawaiano chico", salado, precioRolloChico, "Productos/rolloHA.jpg", null, "Rollo de pizza hawaiano con piña, queso y salsa de tomate", chico);
-
-let rolloCHAMg = new Producto("rolloCHAMg", "Rollo de champiñones grande", salado, precioRolloGrande, "Productos/rolloCHAM.jpg", null, "Un delicioso rollo de champiñones", grande);
-let rolloCHAMm = new Producto("rolloCHAMm", "Rollo de champiñones mediano", salado, precioRolloMediano, "Productos/rolloCHAM.jpg", null, "Un delicioso rollo de champiñones", mediano);
-let rolloCHAMc = new Producto("rolloCHAMc", "Rollo de champiñones chico", salado, precioRolloChico, "Productos/rolloCHAM.jpg", null, "Un delicioso rollo de champiñones", chico);
-
-let rolloCHOg = new Producto("rolloCHOg", "Rollo de chorizo grande", salado, precioRolloGrande, "Productos/rolloCHO.jpg", null, "Un delicioso rollo para los amanetdes del chorizo con topping de queso", grande);
-let rolloCHOm = new Producto("rolloCHOm", "Rollo de chorizo mediano", salado, precioRolloMediano, "Productos/rolloCHO.jpg", null, "Un delicioso rollo para los amanetdes del chorizo con topping de queso", mediano);
-let rolloCHOc = new Producto("rolloCHOc", "Rollo de chorizo chiico", salado, precioRolloChico, "Productos/rolloCHO.jpg", null, "Un delicioso rollo para los amanetdes del chorizo con topping de queso", chico);
-
-let rollCHOg = new Producto("rollCHOg", "Roll de chocolate grande", dulce, precioRollGrande,"Productos/rollCHO.jpg", null, "Dulce roll de chocolate", grande);
-let rollCHOm = new Producto("rollCHOm", "Roll de chocolate mediano", dulce, precioRollMediano,"Productos/rollCHO.jpg", null, "Dulce roll de chocolate", mediano);
-
-let rollCAg = new Producto("rollCAg", "Roll de canela con manzana grande", dulce, precioRollGrande, "Productos/rollCA.jpg", null, "Dulce roll de canela con manzana", grande);
-let rollCAm = new Producto("rollCAm", "Roll de canela con manzana mediano", dulce, precioRollMediano, "Productos/rollCA.jpg", null, "Dulce roll de canela con manzana", mediano);
-
-let galletaCHg = new Producto("galletaCHg", "Galleta de chocolate grande", galleta, precioGalletaGrande, "Productos/galletaCH.jpg", null, "Galleta con chispas de chocolate", grande);
-let galletaCHm = new Producto("galletaCHm", "Galleta de chocolate grande", galleta, precioGalletaMediana, "Productos/galletaCH.jpg", null, "Galleta con chispas de chocolate", mediano);
-
-let galletaAVg = new Producto("galletaAVg", "Galleta de avena grande", galleta, precioGalletaGrande, "Productos/galletaAV.jpg", null, "Deliciosa galleta de avena", grande);
-let galletaAVm = new Producto("galletaAVm", "Galleta de avena mediana", galleta, precioGalletaMediana, "Productos/galletaAV.jpg", null, "Deliciosa galleta de avena", mediano);
+function createProducts(){
+    productList.push(rolloPP);
+    productList.push(rolloPH);
+    productList.push(rolloIT);
+    productList.push(rolloHA);
+    productList.push(rolloCHAM);
+    productList.push(rolloCHO);
+    productList.push(rollCHO);
+    productList.push(rollCA);
+    productList.push(galletaCH);
+    productList.push(galletaAV);
+}
+createProducts(); */
 
 
-function renderProducts(){
-    let cardsContainer = null
+/* BotonMenuMovil.addEventListener("click", showMenuMovil);
+function showMenuMovil(){
+    MenuMovil.classList.toggle("inactiveMovilMenu");
+} */
+
+/* function renderProducts(){
     
-    if (product.tamaño == grande) {
-        cardsContainer = document.getElementById(product.type + "s" + "-" + product.tamaño + "s")
-    } else {
-        cardsContainer = document.getElementById(product.tamaño + "s")
-    }
+    const cardsContainer = document.getElementById(product.type + "s")
 
     const card = document.createElement("div")
     card.classList.add("card")
@@ -88,7 +181,7 @@ function renderProducts(){
     productInfo.classList.add("product-info")
 
     const productImage = document.createElement("img")
-    productImage.setAttribute("src", product.image)
+    productImage.setAttribute("src", product.imagen)
 
     const productName = document.createElement("h3")
     productName.classList.add("product-name")
@@ -105,57 +198,35 @@ function renderProducts(){
 
 function renderDulces(){
     for(product of productList){
-        if(product.type == dulce){   
-            if (product.tamaño == grande){
-                renderProducts()  
-            } else { null }
-        } else { null }
+        if(product.type == "dulce"){   
+        renderProducts()    
+        } else {
+            null
+        }
     }
 }
 function renderSalados(){
     for(product of productList){
-        if(product.type == salado){   
-            if (product.tamaño == grande){
-                renderProducts()
-            } else { null }
-        } else { null }
+        if(product.type == "salado"){   
+        renderProducts()    
+        } else {
+            null
+        }
     }
 }
 function renderGalletas(){
     for(product of productList){
-        if(product.type == galleta){   
-            if (product.tamaño == grande){
-                renderProducts()  
-            } else { null }
-        } else { null }
-    }
-}
-function renderMedianos(){
-    for(product of productList){
-        if(product.tamaño == mediano){   
-            renderProducts()
-        } else { null }
-    }
-}
-function renderChicos(){
-    for(product of productList){
-        if(product.tamaño == chico){   
-            renderProducts()
-        } else { null }
+        if(product.type == "galleta"){   
+        renderProducts()    
+        } else {
+            null
+        }
     }
 }
 
 renderSalados();
 renderDulces();
-renderGalletas();
-renderMedianos();
-renderChicos();
-
-BotonMenuMovil.addEventListener("click", showMenuMovil);
-
-function showMenuMovil(){
-    MenuMovil.classList.toggle("inactiveMovilMenu");
-}
+renderGalletas(); */
 
 const detallesdeProducto = document.getElementById("detalles-de-producto");
 
@@ -184,7 +255,7 @@ function renderDetallesDeProducto(product){
     const ImagenProductoEnDetalle = document.createElement("div");
     ImagenProductoEnDetalle.classList.add("imagen-producto-en-detalle");
     const ImagenDetalle = document.createElement("img");
-    ImagenDetalle.setAttribute("src", product.image)
+    ImagenDetalle.setAttribute("src", product.imagen)
     const nombreProducto = document.createElement("h3");
     nombreProducto.innerText = product.name;
     const descripcionDeProducto = document.createElement("p");
@@ -251,7 +322,7 @@ function renderCarrito(){
         const imagenDeProductEnCariito = document.createElement("div");
         imagenDeProductEnCariito.classList.add("imagen-de-producto-en-carrito");
         const imagen = document.createElement("img");
-        imagen.setAttribute("src", product.image);
+        imagen.setAttribute("src", product.imagen);
         imagenDeProductEnCariito.appendChild(imagen);
 
         const informacionEnCarrito = document.createElement("div");
