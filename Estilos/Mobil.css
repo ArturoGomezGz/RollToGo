@@ -51,3 +51,24 @@ header{
 .selector-de-cantidad{
     margin-top: 30px;
 }
+.card{
+    width: 200px;
+    margin: auto;
+}
+.product-info h3 {
+    font-size: 1.6rem;
+    height: 55px;
+}
+.cards-container {
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, 250px);
+    column-gap: 0;
+    row-gap: 30px;
+    place-content: center;
+}
+ul p{
+    font-size: 1.8rem;
+}
+#cantidad-productos-en-carrito{
+    font-size: 1.6rem;
+}
