@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roll To Go</title>
+    <title>Mister Rollo</title>
     <link rel="stylesheet" href="Estilos/Main.css">
     <link rel="stylesheet" href="Estilos/Mobil.css" media="screen and (max-width: 620px)">
+    
 </head>
 <body>
     <header>
@@ -91,7 +92,7 @@
             <div id="lista-de-productos-checkout">
                 
             </div>
-            <form action="">
+            <form id="pedido-form" action="">
                 <div id="Nombre" class=" ">
                     <h3>Nombre</h3>
                     <input type="text">
@@ -103,13 +104,13 @@
                 </div>
                 <div id="especificaciones">
                     <h3>especificacones</h3>
-                    <input id="especificaciones-input" type="text">
+                    <textarea id="especificaciones-input" name="especificaciones" cols="5" rows="5"></textarea>
                 </div>
                 <div id="bolsa-mister rollo">
                     <h3>¿Bolsa Mister Rollo?</h3>
                     <input type="checkbox">
                 </div>
-                <input type="submit">
+                <input id="submit-pedido" type="submit">
             </form>
         </div>
     </section>

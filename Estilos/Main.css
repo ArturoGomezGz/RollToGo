@@ -6,6 +6,7 @@
     --color5: black;
     --fuente1: sans-serif;
     --headerSpace: 100px;
+    --margin-top-pedido: 5px;
 }
 *{
     margin: 0;
@@ -314,16 +315,24 @@ main{
     overflow: auto;
 }
 #pedido h1{
-    font-size: 1.6rem;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 50px;
 }
 #pedido > #lista-informacion{
     display: flex;
     justify-content: space-around;
 }
 #lista-de-productos-checkout{
-    width: 55%;
+    width: 40%;
     padding: 0 50px;
+    background-color: gray;
+    padding: 10px;
+    border-radius: 10px;
     
+}
+#pedido-form{
+    margin-top: 0px;
 }
 .producto-checkut{
     border-bottom: 1px solid black;
@@ -343,10 +352,6 @@ main{
     text-align: center;
     text-transform: capitalize;
 }
-#pedido h1{
-    text-align: center;
-    margin-bottom: 50px;
-}
 .producto-checkut h3, .producto-checkut h4{
     margin-bottom: 2px;
 }
@@ -359,4 +364,26 @@ main{
 }
 #Nombre input{
     width: 80%;
+}
+.producto-checkut h3{
+    font-size: 1.6rem;
+}
+.producto-checkut h4{
+    font-size: 1.4rem;
+}
+form h3{
+    font-size: 1.6rem;
+}
+form input{
+    font-size: 1.4rem;
+    border-radius: 5px;
+    padding: 2px;
+    margin-top: var(--margin-top-pedido);
+}
+#submit-pedido{
+    padding: 3px;
+}
+#especificaciones-input{
+    font-size: 1.4rem;
+    margin-top: var(--margin-top-pedido);
 }
