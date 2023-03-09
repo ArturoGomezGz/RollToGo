@@ -2,7 +2,6 @@
 /* datos formulario */
 
 include("conection.php");
-conectar();
 /* $getmysql = new mysqlconex(); */
 /* $getconex = $getmysql->conex(); */
 
@@ -37,5 +36,13 @@ $insertar = "INSERT INTO pedidos (IdPedido, nombre, fecha, hora, IdProducto, can
 VALUES (null , '$nombre', '','','','','')";
 
 echo $insertar;
+
+$query = mysqli_query($enlace,$insertar);
+
+if($query){
+    echo "corretco";
+} else {
+    echo "error";
+}
 
 ?>
