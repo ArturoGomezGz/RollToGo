@@ -1,11 +1,16 @@
 <?php
-
-class mysqlconex
-{
-        public function conex(){
-        $enlace=mysqli_connect("localhost", "root", "1234", "rolltogo");
-        return $enlace;
+function conectar(){
+    $user= "root";
+    $pass= "";
+    $server= "localhost";
+    $db= "rolltogo";
+    $enlace =mysqli_connect($server, $user, $pass, $db);
+    
+    if(!$enlace){
+        die("error al conectar" .mysqli_error() );
     }
+    echo"conecion exitosa";
+    mysqli_close($enlace);
 }
 
 ?>

@@ -2,9 +2,11 @@
 /* datos formulario */
 
 include("conection.php");
-$getmysql = new mysqlconex();
-$getconex = $getmysql->conex();
+conectar();
+/* $getmysql = new mysqlconex(); */
+/* $getconex = $getmysql->conex(); */
 
+/*
 if(isset($_POST["pedir"])){
     $nombre=$_POST["nombre"];
     $fecha=$_POST["fecha"];
@@ -25,10 +27,12 @@ if(isset($_POST["pedir"])){
     }
     mysqli_stmt_close($sentecia);
     mysqli_close($getconex);
-}
+} */
 
 
+$nombre = $_POST["nombre"];
 
-
+$insertar = "INSERT INTO pedidos (IdPedido, nombre, fecha, hora, IdProducto, cantidad, IdTamaño)
+VALUES ('' , '$nombre', null,null,null,null,null,)"
 
 ?>
