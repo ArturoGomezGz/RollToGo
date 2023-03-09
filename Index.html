@@ -92,15 +92,15 @@
             <div id="lista-de-productos-checkout">
                 
             </div>
-            <form id="pedido-form" action="">
+            <form id="pedido-form" action="PHP/Pedidos.php" method="post">
                 <div id="Nombre" class=" ">
                     <h3>Nombre</h3>
-                    <input type="text">
+                    <input name="nombre" type="text">
                 </div>
                 <div id="fecha-hora">
                     <h3>Fecha y Hora</h3>
-                    <input type="date">
-                    <input type="time">
+                    <input name="fecha" type="date">
+                    <input name="hora" type="time">
                 </div>
                 <div id="especificaciones">
                     <h3>especificacones</h3>
@@ -108,9 +108,9 @@
                 </div>
                 <div id="bolsa-mister rollo">
                     <h3>¿Bolsa Mister Rollo?</h3>
-                    <input type="checkbox">
+                    <input name="bolsaMR" type="checkbox">
                 </div>
-                <input id="submit-pedido" type="submit">
+                <input id="submit-pedido" type="submit" name="pedir">
             </form>
         </div>
     </section>
