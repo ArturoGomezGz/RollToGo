@@ -10,7 +10,7 @@ function conectar(){
         die("error al conectar" .mysqli_error() );
     }
     echo"conecion exitosa";
-    mysqli_close($enlace);
 }
 
 ?>
+

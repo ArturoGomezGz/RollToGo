@@ -31,8 +31,11 @@ if(isset($_POST["pedir"])){
 
 
 $nombre = $_POST["nombre"];
+echo " pedido a nomrbe de $nombre";
 
 $insertar = "INSERT INTO pedidos (IdPedido, nombre, fecha, hora, IdProducto, cantidad, IdTamaño)
-VALUES ('' , '$nombre', null,null,null,null,null,)"
+VALUES (null , '$nombre', '','','','','')";
+
+echo $insertar;
 
 ?>
