@@ -30,12 +30,14 @@ if(isset($_POST["pedir"])){
 
 
 $nombre = $_POST["nombre"];
-echo " pedido a nomrbe de $nombre";
+$fecha = $_POST["fecha"];
+$hora = $_POST["hora"];
 
 $insertar = "INSERT INTO pedidos (IdPedido, nombre, fecha, hora, IdProducto, cantidad, IdTamaño)
-VALUES (null , '$nombre', '','','','','')";
+VALUES (null , '$nombre', '$fecha', '$hora','','','')";
 
-echo $insertar;
+echo $fecha;
+echo $hora;
 
 $query = mysqli_query($enlace,$insertar);
 
