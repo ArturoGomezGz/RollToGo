@@ -36,15 +36,17 @@ $hora = $_POST["hora"];
 $insertar = "INSERT INTO pedidos (IdPedido, nombre, fecha, hora, IdProducto, cantidad, IdTamaño)
 VALUES (null , '$nombre', '$fecha', '$hora','','','')";
 
-echo $fecha;
-echo $hora;
-
 $query = mysqli_query($enlace,$insertar);
 
 if($query){
-    echo "corretco";
+    echo 
+    "<script> 
+        alert('Supedido fue realizado con exito a nombre de $nombre');
+    </script>";
 } else {
     echo "error";
-}
+};
+
+
 
 ?>
