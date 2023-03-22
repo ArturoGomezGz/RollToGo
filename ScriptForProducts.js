@@ -6,6 +6,7 @@ let productDetails = [];
 const rol = "rol";
 const rollo = "rollo";
 const otro = "otro";
+const galleta = "galleta";
 
 
 // Productos
@@ -18,16 +19,16 @@ function Producto(idProducto, name, type, image, description) {
     productList.push(this)
 }
 
-let rollPP = new Producto(1, "Rollo de peperoni ", rol, "Productos/rolloPP.jpg", null,"delicioso rollo de pizza de peperoni", );
-let rollPH = new Producto(2, "Rollo de jamon con philadelphia ", rol, "Productos/rolloPH.jpg", null, "delicioso rollo de jamon con philadelphia", );
-let rolloIT = new Producto(3, "Rollo Italiano", rol, "Productos/rolloIT.jpg", null, "Undelicioso rollo de pizza italiano", );
-let rolloHA = new Producto(4, "Rollo hawaiano ", rol, "Productos/rolloHA.jpg", null, "Rollo de pizza hawaiano con piña, queso y salsa de tomate", );
-let rolloCHAM = new Producto(5, "Rollo de champiñones ", rol, "Productos/rolloCHAM.jpg", null, "Un delicioso rollo de champiñones", );
-let rolloCHO = new Producto(6, "Rollo de chorizo ", rol, "Productos/rolloCHO.jpg", null, "Un delicioso rollo para los amanetdes del chorizo con topping de queso", );
+let rollPP = new Producto(1, "Rollo de peperoni ", rollo, "Productos/rolloPP.jpg", null,"delicioso rollo de pizza de peperoni", );
+let rollPH = new Producto(2, "Rollo de jamon con philadelphia ", rollo, "Productos/rolloPH.jpg", null, "delicioso rollo de jamon con philadelphia", );
+let rolloIT = new Producto(3, "Rollo Italiano", rollo, "Productos/rolloIT.jpg", null, "Undelicioso rollo de pizza italiano", );
+let rolloHA = new Producto(4, "Rollo hawaiano ", rollo, "Productos/rolloHA.jpg", null, "Rollo de pizza hawaiano con piña, queso y salsa de tomate", );
+let rolloCHAM = new Producto(5, "Rollo de champiñones ", rollo, "Productos/rolloCHAM.jpg", null, "Un delicioso rollo de champiñones", );
+let rolloCHO = new Producto(6, "Rollo de chorizo ", rollo, "Productos/rolloCHO.jpg", null, "Un delicioso rollo para los amanetdes del chorizo con topping de queso", );
 let rollCHO = new Producto(7, "Roll de chocolate ", rol,"Productos/rollCHO.jpg", null, "Dulce roll de chocolate", );
 let rollCA = new Producto(8, "Roll de canela con manzana ", rol, "Productos/rollCA.jpg", null, "Dulce roll de canela con manzana", );
-let galletaCH = new Producto(9, "Galleta de chocolate ", otro, "Productos/galletaCH.jpg", null, "Galleta con chispas de chocolate", );
-let galletaAV = new Producto(10, "Galleta de avena ", otro, "Productos/galletaAV.jpg", null, "Deliciosa galleta de avena", );
+let galletaCH = new Producto(9, "Galleta de chocolate ", galleta, "Productos/galletaCH.jpg", null, "Galleta con chispas de chocolate", );
+let galletaAV = new Producto(10, "Galleta de avena ", galleta, "Productos/galletaAV.jpg", null, "Deliciosa galleta de avena", );
 
 function renderProducts(){
     let cardsContainer = null
@@ -72,6 +73,13 @@ function renderRollos(){
         } else { null }
     }
 }
+function renderGalletas(){
+    for(product of productList){
+        if(product.type == galleta){   
+            renderProducts()  
+        } else { null }
+    }
+}
 function renderOtros(){
     for(product of productList){
         if(product.type == otro){   
@@ -80,8 +88,10 @@ function renderOtros(){
     }
 }
 
+
 renderRoles();
 renderRollos();
+renderGalletas();
 renderOtros();
 
 BotonMenuMovil.addEventListener("click", showMenuMovil);

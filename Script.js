@@ -7,22 +7,19 @@ const seccionProductosGalletas = document.getElementById("galletas");
 const seccionProductosMedianos = document.getElementById("medianos");
 const seccionProductosChicos = document.getElementById("chicos");
 
-const seccionSalados = document.getElementById("salados-section");
-const seccionDulces = document.getElementById("dulces-section");
+const seccionRollos = document.getElementById("rollos-section");
+const seccionRoles = document.getElementById("roles-section");
 const seccionGalletas = document.getElementById("galletas-section");
-const seccionMedianos = document.getElementById("medianos-section");
-const seccionChicos = document.getElementById("chicos-section");
+const seccionOtros = document.getElementById("otros-section");
 
-const botonSaladosSectionNav = document.getElementById("salados-nav-button");
-const botonDulcesSectionNav = document.getElementById("dulces-nav-button");
+const botonRollosSectionNav = document.getElementById("rollos-nav-button");
+const botonRolesSectionNav = document.getElementById("roles-nav-button");
 const botonGalletasSectionNav = document.getElementById("galletas-nav-button");
-const botonMedianosSectionNav = document.getElementById("medianos-nav-button");
-const botonChicosSectionNav = document.getElementById("chicos-nav-button");
-const botonSaladosSectionMovil = document.getElementById("salados-nav-button-mov");
-const botonDulcesSectionMovil = document.getElementById("dulces-nav-button-mov");
+const botonOtrosSectionNav = document.getElementById("otros-nav-button");
+const botonRollosSectionMovil = document.getElementById("rollos-nav-button-mov");
+const botonRolesSectionMovil = document.getElementById("roles-nav-button-mov");
 const botonGalletasSectionMovil = document.getElementById("galletas-nav-button-mov");
-const botonMedianosSectionMovil = document.getElementById("medianos-nav-button-mov");
-const botonChicosSectionMovil = document.getElementById("chicos-nav-button-mov");
+const botonOtrosSectionMovil = document.getElementById("otros-nav-button-mov");
 
 const informacioDelProducto = document.getElementById("informacio-del-producto");
 
@@ -33,16 +30,14 @@ const crearPedidoMov = document.getElementById("hacer-pedido-mov");
 
 const listaDeProductosCheckout = document.getElementById("lista-de-productos-checkout");
 
-botonSaladosSectionNav.addEventListener("click", () => scrollToSection(seccionSalados));
-botonDulcesSectionNav.addEventListener("click", () => scrollToSection(seccionDulces));
+botonRollosSectionNav.addEventListener("click", () => scrollToSection(seccionRollos));
+botonRolesSectionNav.addEventListener("click", () => scrollToSection(seccionRoles));
 botonGalletasSectionNav.addEventListener("click", () => scrollToSection(seccionGalletas));
-botonMedianosSectionNav.addEventListener("click", () => scrollToSection(seccionMedianos));
-botonChicosSectionNav.addEventListener("click", () => scrollToSection(seccionChicos));
-botonSaladosSectionMovil.addEventListener("click", () => scrollToSection(seccionSalados));
-botonDulcesSectionMovil.addEventListener("click", () => scrollToSection(seccionDulces));
+botonOtrosSectionNav.addEventListener("click", () => scrollToSection(seccionOtros));
+botonRollosSectionMovil.addEventListener("click", () => scrollToSection(seccionRollos));
+botonRolesSectionMovil.addEventListener("click", () => scrollToSection(seccionRoles));
 botonGalletasSectionMovil.addEventListener("click", () => scrollToSection(seccionGalletas));
-botonMedianosSectionMovil.addEventListener("click", () => scrollToSection(seccionMedianos));
-botonChicosSectionMovil.addEventListener("click", () => scrollToSection(seccionChicos));
+botonOtrosSectionMovil.addEventListener("click", () => scrollToSection(seccionOtros));
 
 const carrito = document.getElementById("carrito");
 const botonCarrito = document.getElementById("carritoButton");
